@@ -8,9 +8,13 @@
 
     %class Lexer
     %unicode
+    %cupsym sym
     %cup
     %line
     %column
+    %char
+    %public
+    %full
 
     %{
       StringBuffer string = new StringBuffer();
@@ -21,6 +25,7 @@
       private Symbol symbol(int type, Object value) {
         return new Symbol(type, yyline, yycolumn, value);
       }
+      public static mprincipal pincipals = new mprincipal();
     %}
 
     LineTerminator = \r|\n|\r\n
@@ -29,17 +34,16 @@
 
     /* comments */
     Comment = {TraditionalComment} | {EndOfLineComment} | {DocumentationComment}
-
-    TraditionalComment   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
-    // Comment can be the last line of the file, without line terminator.
-    EndOfLineComment     = "//" {InputCharacter}* {LineTerminator}?
-    DocumentationComment = "/**" {CommentContent} "*"+ "/"
+    numero  =   [0-9]+
+    real    =   {numero}"."{numero}
+    comilla =   "\"" [^*] ~"\"" | "\"" + "\'"
+    ComentarioBloque   = "/*" [^*] ~"*/" | "/*" "*"+ "/"
+    ComentarioLinea =   "--".|  "-- "
+    cadena  =   "\'" [^*] ~"\'" | "\'" + "\'"
+    id  =   [a-zA-Z] [a-zA-Z0-9_]*
     CommentContent       = ( [^*] | \*+ [^/*] )*
 
-    Identifier = [:jletter:] [:jletterdigit:]*
-
-    DecIntegerLiteral = 0 | [1-9][0-9]*
-
+/*EXPRESIONES REGULARES PARA VLIDAR LA GRAMATICA*/
     %state STRING
 
     %%
@@ -48,10 +52,13 @@
     <YYINITIAL> "abstract"           { return symbol(sym.ABSTRACT); }
     <YYINITIAL> "boolean"            { return symbol(sym.BOOLEAN); }
     <YYINITIAL> "break"              { return symbol(sym.BREAK); }
-
-    <YYINITIAL> {
-      /* identifiers */ 
-      {Identifier}                   { return symbol(sym.IDENTIFIER); }
+    <YYINITIAL> {ComentarioBloque}   {
+    DefaultTableModel tokens = {DefaultTableModel} principals.tbtokens.getModel();
+    tokens.addRow(new Object[]) {"COM", "COMENTARIOBLOQUE", yytext{}, yyline, yycolumn}};
+    Reporte u=new Reporte();
+    u.escritura {"COM "+"COMENTARIOBLOQUE "+yytext()+yyline+yycolumn};  
+    return new Symbol(Tokens.comentrio,yyline,yychar,, new String(yytext()));
+ }
      
       /* literals */
       {DecIntegerLiteral}            { return symbol(sym.INTEGER_LITERAL); }

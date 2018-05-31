@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.norllanac.compiladores2018.Models.aritmetica;
+package com.norllanac.compiladores2018.Models;
 
 import java.io.File;
 
