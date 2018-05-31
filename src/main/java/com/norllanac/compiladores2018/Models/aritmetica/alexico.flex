@@ -1,6 +1,6 @@
 
 /* --------------------------Codigo de Usuario----------------------- */
-package ejemplocup;
+package com.norllanac.compiladores2018.Models.aritmetica;
 
 import java_cup.runtime.*;
 import java.io.Reader;

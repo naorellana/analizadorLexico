@@ -4,7 +4,7 @@
 // Fri Apr 18 08:21:24 MDT 2014
 //----------------------------------------------------
 
-package com.norllanac.compiladores2018.Models.Test;
+package com.norllanac.compiladores2018.Models.aritmetica;
 
 /** CUP generated class containing symbol constants. */
 public class sym {

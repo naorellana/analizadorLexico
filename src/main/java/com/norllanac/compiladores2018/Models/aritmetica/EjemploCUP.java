@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package com.norllanac.compiladores2018.Models.Test;
+package com.norllanac.compiladores2018.Models.aritmetica;
 
 import java.io.File;
 import java.nio.file.Path;
@@ -32,7 +32,7 @@ public class EjemploCUP {
         int valor = 0;
         do {
             System.out.println("Elija una opcion: ");
-            System.out.println("1) Generar");
+            //System.out.println("1) Generar");
             System.out.println("2) Ejecutar");
             System.out.println("3) Salir");
             System.out.print("Opcion: ");
@@ -52,7 +52,7 @@ public class EjemploCUP {
                         archSintactico = args[1];
                     } else {
                         System.out.println("\n*** Procesando archivo default ***\n");
-                        archLexico = "C:\\Users\\ORELLANA CUY\\Documents\\NetBeansProjects\\compiladores2018\\src\\main\\java\\com\\norllanac\\compiladores2018\\Models\\Test\\alexico.flex";
+                        archLexico = "C:\\Users\\ORELLANA CUY\\Documents\\NetBeansProjects\\compiladores2018\\src\\main\\java\\com\\norllanac\\compiladores2018\\Models\\aritmetica\\alexico.flex";
                         archSintactico = "asintactico.cup";
                     }
                     String[] alexico = {archLexico};
@@ -77,7 +77,7 @@ public class EjemploCUP {
                     /*  Ejecutamos el analizador lexico y sintactico
                      sobre un archivo de pruebas. 
                      */
-                    String[] archivoPrueba = {"C:\\Users\\ORELLANA CUY\\Documents\\NetBeansProjects\\compiladores2018\\src\\main\\java\\com\\norllanac\\compiladores2018\\Models\\Test\\test.txt"};
+                    String[] archivoPrueba = {"C:\\Users\\ORELLANA CUY\\Documents\\NetBeansProjects\\compiladores2018\\src\\main\\java\\com\\norllanac\\compiladores2018\\Models\\aritmetica\\test.txt"};
                     AnalizadorSintactico.main(archivoPrueba);
                     System.out.println("Ejecutado!");
                     break;
