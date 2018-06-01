@@ -52,7 +52,7 @@ public class EjemploCUP {
                         archSintactico = args[1];
                     } else {
                         System.out.println("\n*** Procesando archivo default ***\n");
-                        archLexico = "C:\\Users\\ORELLANA CUY\\Documents\\NetBeansProjects\\compiladores2018\\src\\main\\java\\com\\norllanac\\compiladores2018\\Models\\aritmetica\\alexico.flex";
+                        archLexico = "alexico.flex";
                         archSintactico = "asintactico.cup";
                     }
                     String[] alexico = {archLexico};
@@ -77,9 +77,14 @@ public class EjemploCUP {
                     /*  Ejecutamos el analizador lexico y sintactico
                      sobre un archivo de pruebas. 
                      */
-                    String[] archivoPrueba = {"C:\\Users\\ORELLANA CUY\\Documents\\NetBeansProjects\\compiladores2018\\src\\main\\java\\com\\norllanac\\compiladores2018\\Models\\aritmetica\\test.txt"};
-                    AnalizadorSintactico.main(archivoPrueba);
-                    System.out.println("Ejecutado!");
+                    String[] archivoPrueba = {"aritmetica.txt"};
+                    try{
+                        System.out.println("Ejecutado!"+AnalizadorSintactico.main(archivoPrueba).toString());
+                        //break;
+                    }catch(Exception e){
+//                        System.out.println("Ejecutado!"+AnalizadorSintactico.main(archivoPrueba).toString());
+                        
+                    };
                     break;
                 }
                 case SALIR: {

@@ -136,15 +136,21 @@ public class AnalizadorSintactico extends java_cup.runtime.lr_parser {
     /* Metodo main para garantizar la ejecucion del analizador
        lexico y sintactico, ademas que se pase como parametro la tabla
        de simbolos correspondiente. */
-    public static void main(String[] args){
+    public static Object main(String[] args){
+        Object t="";
+        String te="";
         try {
             AnalizadorSintactico asin = new AnalizadorSintactico(
-                    new AnalizadorLexico( new FileReader(args[0])));
+               new AnalizadorLexico( new FileReader(args[0])));
             Object result = asin.parse().value;
+            t=asin.parse().value;
             System.out.println("\n*** Resultados finales ***");
+             return t;
         } catch (Exception ex) {
             ex.printStackTrace();
+             return t;
         }
+       
     }
 
 }
