@@ -11,7 +11,7 @@ import java_cup.runtime.Symbol;
  *
  * @author david
  */
-public class Ejemplo2JflexyCupCompi1 {
+public class EjemploHTML {
 
     /**
      * @param args the command line arguments

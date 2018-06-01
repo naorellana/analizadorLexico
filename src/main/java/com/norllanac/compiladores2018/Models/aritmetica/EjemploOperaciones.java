@@ -15,7 +15,7 @@ import java.util.logging.Logger;
 /**
  * @author arturo
  */
-public class EjemploCUP {
+public class EjemploOperaciones {
 
     public final static int GENERAR = 1;
     public final static int EJECUTAR = 2;
@@ -61,7 +61,7 @@ public class EjemploCUP {
                     try {
                         java_cup.Main.main(asintactico);
                     } catch (Exception ex) {
-                        Logger.getLogger(EjemploCUP.class.getName()).log(Level.SEVERE, null, ex);
+                        Logger.getLogger(EjemploOperaciones.class.getName()).log(Level.SEVERE, null, ex);
                     }
                     //movemos los archivos generados
                     boolean mvAL = moverArch("AnalizadorLexico.java");
@@ -77,7 +77,7 @@ public class EjemploCUP {
                     /*  Ejecutamos el analizador lexico y sintactico
                      sobre un archivo de pruebas. 
                      */
-                    String[] archivoPrueba = {"aritmetica.txt"};
+                    String[] archivoPrueba = {"operaciones.txt"};
                     try{
                         System.out.println("Ejecutado!"+AnalizadorSintactico.main(archivoPrueba).toString());
                         //break;
