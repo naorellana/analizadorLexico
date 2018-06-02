@@ -2,12 +2,6 @@
 package com.norllanac.compiladores2018.Controllers;
 
 
-<<<<<<< HEAD
-=======
-import com.norllanac.compiladores2018.Models.aritmetica.AnalizadorSintactico;
-import java.io.FileWriter;
-import java.io.IOException;
->>>>>>> f43f9bfd5b3f1acc685f14a1666ec73e581aa9c0
 import javax.servlet.http.HttpServletRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -63,37 +57,11 @@ public ModelAndView sample(HttpServletRequest request){
 
     
     
-<<<<<<< HEAD
     @GetMapping("/prueba")
     public ModelAndView prueba()
     {
         ModelAndView mav=new ModelAndView();
         mav.setViewName("arbol_1");
-=======
-    @GetMapping("/ari")
-    public ModelAndView ari(HttpServletRequest req)
-    {
-        String re="";
-        Object ob=null;
-        String[] archivoPrueba = {"aritmetica.txt"};
-        //String[] archivoPrueba = {"aritmetica.txt"};
-                    try{
-                        re=AnalizadorSintactico.main(archivoPrueba).toString();
-                        
-                        ob=AnalizadorSintactico.main(archivoPrueba);
-                        //break;
-                    }catch(Exception e){
-//                        System.out.println("Ejecutado!"+AnalizadorSintactico.main(archivoPrueba).toString());
-                        
-                    };
-                    //breakre=
-                    
-                    re=ob.toString();
-        req.setAttribute("re", re);
-        req.setAttribute("ob", ob);
-        ModelAndView mav=new ModelAndView();
-        mav.setViewName("salida");
->>>>>>> f43f9bfd5b3f1acc685f14a1666ec73e581aa9c0
         return mav;
     }
     
@@ -125,46 +93,11 @@ public ModelAndView sample(HttpServletRequest request){
 		resp.sendRedirect("/");
 	} */
         
-<<<<<<< HEAD
        @GetMapping("edit")
 	public String edit(@RequestParam int id, HttpServletRequest req) {
             String sql = "SELECT * FROM usuarios WHERE id='" + id+"'";
       //      List usuarios=this.jdbcTemplate.queryForList(sql);
 		//req.setAttribute("usuarios", usuarios.get(0));//obtiene un array con un registro en la posicion 0
-=======
-       @GetMapping("lex")
-	public String edit(@RequestParam String texto, HttpServletRequest req) {
-            //String sql = "SELECT * FROM usuarios WHERE id='" + id+"'";
-      //      List usuarios=this.jdbcTemplate.queryForList(sql);
-		//req.setAttribute("usuarios", usuarios.get(0));//obtiene un array con un registro en la posicion 0
-                String[] archivoPrueba = {texto};
-                String salida="";
-                //Creamos nuestro String que vamos a escribir en el fichero
-    //String texto = "Bienvenidos a Aitor's Blog";
-
-    //Creamos el nombre de nuestro fichero
-    String nombre = "fichero.txt";
-
-    try{
-
-      //Creamos un Nuevo objeto FileWriter dandole
-      //como parámetros la ruta y nombre del fichero
-      FileWriter fichero = new FileWriter(nombre);
-
-      //Insertamos el texto creado y si trabajamos
-      //en Windows terminaremos cada línea con "\r\n"
-      fichero.write(texto + "\r\n");
-
-      //cerramos el fichero
-      fichero.close();
-
-    }catch(Exception ex){
-      ex.printStackTrace();
-    }
-  
-                //AnalizadorSintactico.main("fichero.txt");
-                    System.out.println("Ejecutado!");
->>>>>>> f43f9bfd5b3f1acc685f14a1666ec73e581aa9c0
                 req.setAttribute("action", "update");
 		return "add";
 	} 

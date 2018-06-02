@@ -83,10 +83,6 @@
     <groupId>java_cup</groupId>
     <artifactId>java_cup</artifactId>
     <version>0.9e</version>
-<<<<<<< HEAD
-=======
-    <type>jar</type>
->>>>>>> f43f9bfd5b3f1acc685f14a1666ec73e581aa9c0
 </dependency>
 
 
